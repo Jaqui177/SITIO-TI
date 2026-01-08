@@ -1,3 +1,17 @@
 h1{
-    color:beige
+    color:bl
+   
+}
+body {
+    background-color: rgb(101, 156, 204);
+}
+#encabezado {
+    background-color: rgb(178, 181, 209);
+    height: 150px;
+    width: 80%;
+    margin: 0 auto;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 10px 10px 5px rgha(0,0,0,0.5) ;
+
 }

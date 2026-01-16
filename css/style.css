@@ -5,22 +5,28 @@ body{
     background-color: rgb(27, 216, 194);
 }
 #encabezado{
-background-color: rgb(56, 73, 83);
+background-color: rgb(162, 215, 233);
 height: 150px;
 width: 97%;
 margin: 0 auto;
 border-radius: 15px;
 padding: 15px;
-box-shadow: 10px 10px 7px rgba(20, 20, 20, 0.3);
+box-shadow: 10px 10px 7px rgba(155, 154, 154, 0.3);
 display: flex;
+align-items: center;
+justify-content: space-between;
+gap: 15px;
 }
 
 .logo{
 background-color: rgb(238, 220, 220);
-width: 10%;
+width: 170px;
+height: 170px;
 justify-content: center;
 align-items: center;
 display: flex;
+flex-shrink: 0;
+margin-right: 10px;
 }
 .logo img{
     width: 100%;
@@ -28,22 +34,27 @@ display: flex;
 }
 
 .menu{
-    background-color: rgb(138, 131, 168);
-    width: 70%;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
 .menu ul{
     list-style: none;
     padding: 0%;
     margin: 0%;
     display: flex;
-    background-color: rgb(194, 228, 220);
+    background-color: rgb(159, 160, 160);
+    align-items: center;
+    justify-content: center;
    
 }
 
 .menu ul li{
     margin: 0%;
     padding: 15px 20px;
-    
+    font-size: 18px;
 }
 
 .menu ul li a{
@@ -52,16 +63,13 @@ display: flex;
 }
 
 .menu ul li a:hover{
-    background-color: rgb(64, 92, 126);
+    background-color: rgb(132, 134, 136);
     padding: 15 px 20px;
 }
-.redes{
-    background-color: rgb(189, 178, 178);
-    width: 20%;
-}
+
 
 /* --- Nuevos estilos añadidos para reproducir la maqueta --- */
-.social-links{ display:flex; gap:8px; align-items:center; width:24%; justify-content:flex-end; }
+.social-links{ display:flex; gap:8px; align-items:center; justify-content:flex-end; flex-shrink: 0; }
 .social-links img{ width:36px; height:36px; }
 
 #contenido-principal{ margin: 18px auto; padding: 12px; background: #0b3f51; border: 8px solid #083744; border-radius:6px; max-width:1100px; }
@@ -95,14 +103,108 @@ display: flex;
 .gran-seccion-content p{ margin:0; font-size:16px; line-height:1.6; }
 
 .botones-js{ margin: 14px auto; text-align:center; gap:8px; display:flex; justify-content:center; flex-wrap:wrap; }
-.botones-js button{ padding:8px 12px; margin:6px; border-radius:6px; border: none; background:#93d36c; color:#b48889; cursor:pointer; }
+.botones-js button{ padding:8px 12px; margin:6px; border-radius:6px; border: none; background:#999999; color:#b48889; cursor:pointer; }
 
 #pie{ margin: 18px auto; padding: 12px; display:flex; gap:16px; max-width:1100px; }
-.pie-item{ flex:1; background:#cbc9c6; color:#fff; text-align:center; padding:18px; border:6px solid #af7777; border-radius:4px; }
+.pie-item{ flex:1; background:#e7e5e5; color:#0a0a08; text-align:center; padding:18px; border:6px solid #af7777; border-radius:4px; }
+
+/* Animaciones de entrada para tarjetas */
+.card{
+    transition: transform 600ms cubic-bezier(.2,.9,.2,1), opacity 600ms ease, box-shadow 400ms ease;
+    transform: translateY(20px) scale(.98);
+    opacity: 0;
+    will-change: transform, opacity;
+}
+.card.in-view{
+    transform: translateY(0) scale(1);
+    opacity: 1;
+    box-shadow: 8px 8px 18px rgba(0,0,0,0.25);
+}
+.card:hover{
+    transform: translateY(-6px) scale(1.02);
+    transition: transform 220ms ease;
+}
+
+/* Animaciones en gran-seccion y su contenido */
+.gran-seccion{
+    transition: transform 700ms cubic-bezier(.2,.8,0,1), opacity 700ms ease;
+    transform: translateY(20px);
+    opacity: 0;
+}
+.gran-seccion.in-view{
+    transform: translateY(0);
+    opacity: 1;
+}
+.gran-seccion-content h2{
+    opacity: 0;
+    transform: translateY(20px);
+    transition: transform 700ms cubic-bezier(.2,.8,0,1), opacity 700ms ease;
+}
+.gran-seccion.in-view .gran-seccion-content h2{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos para sección de ejercicios */
+#ejercicios {
+    background: #0b3f51;
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1100px;
+    border: 8px solid #083744;
+    border-radius: 6px;
+}
+
+#ejercicios h2 {
+    color: #f1dfdf;
+    text-align: center;
+}
+
+.ejercicios-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.ejercicio-item {
+    background: #5dabd5;
+    padding: 15px;
+    border-radius: 4px;
+    border: 3px solid #6c6ea3;
+}
+
+.ejercicio-item h3 {
+    color: #f7eeee;
+}
+
+.ejercicio-item p {
+    margin: 10px 0;
+}
+
+.ejercicio-resultado {
+    background: #fff;
+    padding: 10px;
+    border-radius: 3px;
+    margin-top: 10px;
+}
+
+.ejercicio-btn {
+    background: #686767;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#salida {
+    margin-top: 10px;
+}
 
 /* Responsivo */
 @media (max-width: 800px){
     .tarjetas{ flex-direction:column; }
     .menu ul{ flex-wrap:wrap; justify-content:center; }
     .social-links{ justify-content:flex-start; margin-top:8px; }
+    .ejercicios-grid{ grid-template-columns: 1fr; }
 }

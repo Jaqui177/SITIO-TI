@@ -82,7 +82,7 @@ display: flex;
     background-size: 400% 400%;
     animation: backgroundMove 8s ease infinite;
     min-height:220px; 
-    color:#fff; 
+    color:#0e0101; 
     display:flex; 
     align-items:center; 
     justify-content:center; 
